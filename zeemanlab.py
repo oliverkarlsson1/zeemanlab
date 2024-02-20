@@ -49,15 +49,17 @@ red_meas_with = [
                     [18725.547, 16697.941, 3],
                     [19083.362, 16658.183, 3.5],
                     [19162.874, 16499.155, 4]
-                ]
 
-splitting_size_blue = [Measurement(FPI_diameter, conversion_constant, i, blue_meas_without).splitting_size() for i in blue_meas_with]
-magnetic_field_blue = [Measurement(FPI_diameter, conversion_constant, i, blue_meas_without).magnetic_field() for i in blue_meas_with]
-plot(magnetic_field_blue, splitting_size_blue, 'Blue')
 
-splitting_size_red = [Measurement(FPI_diameter, conversion_constant, i, red_meas_without).splitting_size() for i in red_meas_with]
-magnetic_field_red = [Measurement(FPI_diameter, conversion_constant, i, red_meas_without).magnetic_field() for i in red_meas_with]
-plot(magnetic_field_red, splitting_size_red, 'Red')
+blue = [Measurement(FPI_diameter, conversion_constant, i, blue_meas_without) for i in blue_meas_with]
+blue_splitting_size = blue.splitting_size()
+blue_magnetic_field = blue.magnetic_field()
+plot(blue_magnetic_field, blue_splitting_size, 'Blue')
+
+red = [Measurement(FPI_diameter, conversion_constant, i, red_meas_without) for i in red_meas_with]
+red_splitting_size = red.splitting_size()
+red_magnetic_field = red.magnetic_field()
+plot(red_magnetic_field, red_splitting_size, 'red')
 
 plt.xlabel(r'$Magnetic \ field \ [T]$', fontsize=14)
 plt.ylabel(r'$Splitting \ size \ [cm^{-1}]$', fontsize=14)
