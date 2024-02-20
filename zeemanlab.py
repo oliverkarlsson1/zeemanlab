@@ -9,10 +9,10 @@ class Measurement:
     def __init__(self, d, c, meas_with, meas_without):
         self.d = d
         self.c = c
-        self.D_a = meas_with[1]*2e-9
-        self.D_b = meas_with[0]*2e-9
-        self.D_1 = meas_without[1]*2e-9
-        self.D_2 = meas_without[0]*2e-9
+        self.D_a = meas_with[1]*2e-6
+        self.D_b = meas_with[0]*2e-6
+        self.D_1 = meas_without[1]*2e-6
+        self.D_2 = meas_without[0]*2e-6
         self.current = meas_with[2]
 
     def splitting_size(self):
