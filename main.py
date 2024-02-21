@@ -52,7 +52,7 @@ def process_and_plot_exp(meas_data: list, reference_meas: list, color: str, FPI_
 def process_and_plot_theory(meas_data, g_J, delta_M_J, color, conversion_constant) -> None:
     mu_B = 3.2741e-24  # [J T^-1]
     h = 6.62618e-34  # [Js]
-    c = 299792458  #[m/s]
+    c = 299792458  # [m/s]
     magnetic_fields = [magnetic_field(conversion_constant, meas[2]) for meas in meas_data]
     slope = (g_J * mu_B * delta_M_J) / (100 * h * c)
     plot_theory(magnetic_fields, slope, color)
