@@ -5,6 +5,7 @@ import numpy as np
 def magnetic_field(conversion_constant: float, current: float) -> float:
     return conversion_constant * current  # [T]
 
+
 def splitting_size(d: float, meas: list, meas_without: list) -> float:
     D_a: float = meas[0] * 2e-6  # [m]
     D_b: float = meas[1] * 2e-6  # [m]
